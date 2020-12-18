@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+#header_wrapper
+{
+ width:100%;
+ min-width:980px;
+ background-color: #0a2ef8;
+}
+#header
+{
+ width:980px;
+ margin:0px auto;
+ padding:0px;
+ height:85px;
+}
+#header li
+{
+ list-style-type:none;
+ float:left;
+ text-align:left;
+ color:white;
+}
+
+#header #sitename a
+{
+ color:rgb(252, 239, 62);
+ text-decoration:none;
+ font-size:30px;
+ font-weight:900;
+}
+#header form
+{
+ margin-top:15px;
+ float:right;
+}
+#header form li
+{
+ font-size:13px;
+ margin-left:15px;
+}
+#header form li a
+{
+ color:#A9BCF5;
+ text-decoration:none;
+}
+#header form input[type="text"]
+{
+ margin-top:3px;
+ margin-bottom:3px;
+ width:150px;
+ border:1px solid #1e8a08;
+ height:25px;
+ padding-left:3px;
+}
+#header form input[type="password"]
+{
+ margin-top:3px;
+ margin-bottom:3px;
+ width:150px;
+ border:1px solid #8a6108;
+ height:25px;
+ padding-left:3px;
+}
+#header form input[type="submit"]
+{
+ height:25px;
+ width: 75px;
+ margin-top:20px;
+ border-radius: 12px;
+ background-color:#f8fc34;
+ color:rgb(3, 3, 3);
+ border:1px solid #08298A;
+}
+
+.myButton {
+	box-shadow: 0px 0px 0px 2px #3e7327;
+	background:linear-gradient(to bottom, #77b55a 2%, #72b352 100%);
+	background-color:#77b55a;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:0px 0px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	background-color:#ec3413;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

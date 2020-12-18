@@ -1,0 +1,166 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+  <title>Cameroon Bet app</title>
+</head>
+<body>
+  <header>
+    <div id="header_wrapper">
+      <div id="header">
+      <li id="sitename"><a href="#">Kamer Bet</a></li>
+        <form action="post">
+          <li>Email or Phone<br><input type="text" name="email"></li>
+          <li>Password<br><input type="password" name="password"><br><a href="">Forgotten account?</a></li>
+          <li><input type="submit" name="login" value="Log In"></li>
+        </form>
+      </div>
+    </div>
+  </header>
+  <div class="nav-scroller py-6 mb-9">
+    <nav class="nav d-flex justify-content-between" style="background-color: #2f45c2;">
+      <a class="p-2" style="color: antiquewhite;" href="#">Sport</a>
+      <a class="p-2" style="color: antiquewhite;" href="#">Live Betting</a>
+      <a class="p-2" style="color: antiquewhite;" href="#">Promos</a>
+      <a class="p-2" style="color: antiquewhite;" href="#">Help</a>
+      <a class="p-2" style="color: antiquewhite;" href="#">HowTo</a>
+    </nav>
+  </div>
+
+    <div id="wrapper" class="row" style="background-color: #28357e;">
+
+      <div id="div1" class="column left">
+        <br>
+        <img src="{% static 'images/testimg.jpg' %}" style="height: 460px;width: 400px;">
+      </div>
+
+      <div  class="column right">
+        <form class="signup-form" action="/register" method="post">
+
+          <!-- form header -->
+          <div class="form-header">
+            <h1>Create Account</h1>
+          </div>
+    
+          <!-- form body -->
+          <div class="form-body">
+    
+            <!-- fullname and username -->
+            <div class="horizontal-group">
+              <div class="form-group left">
+                <label for="fullname" class="label-title">Full name </label>
+                <input type="text" id="fullname" class="form-input" placeholder="enter your first name" />
+              </div>
+              <div class="form-group right">
+                <label for="username" class="label-title">Username*</label>
+                <input type="text" id="username" class="form-input" placeholder="enter your username" required="required"  />
+              </div>
+            </div>
+    
+            <!-- Email and Phone-->
+            <div class="horizontal-group">
+              <div class="form-group left">
+                <label for="email" class="label-title">Email</label>
+                <input type="email" id="email" class="form-input" placeholder="enter your email" >
+              </div>
+              <div class="form-group right">
+                <label for="phone" class="label-title">Phone Number*</label>
+                <input type="tel" id="phone" class="form-input" placeholder="enter your last name" required="required" />
+              </div>
+            </div>
+    
+            <!-- Passwrod and confirm password -->
+            <div class="horizontal-group">
+              <div class="form-group left">
+                <label for="password" class="label-title">Password *</label>
+                <input type="password" id="password" class="form-input" placeholder="enter your password" required="required">
+              </div>
+              <div class="form-group right">
+                <label for="confirm-password" class="label-title">Confirm Password *</label>
+                <input type="password" class="form-input" id="confirm-password" placeholder="enter your password again" required="required">
+              </div>
+            </div>
+            <label><input type="checkbox" value="age"> I declare to be over 21 years.</label><br><br>
+
+            <label><input type="checkbox" value="terms"> I accept the <a href=""> Terms & Conditions </a> of CameroonBet site</label>
+
+          </div>
+    
+          <!-- form-footer -->
+          <div class="form-footer">
+            <button type="submit" class="btn">Register</button>
+          </div>
+    
+        </form>
+      </div>
+
+    </div>
+
+    </div>
+    <script>
+      var rangeLabel = document.getElementById("range-label");
+      var experience = document.getElementById("experience");
+
+      function change() {
+      rangeLabel.innerText = experience.value + "K";
+      }
+    </script>
+    <footer>
+       <div class  ="row" style="background-color: black;">
+        <div class="line mb-3 mx-auto"></div>
+        <div class="d-md-flex px-5 justify-content-around bd-highlight col-md-12 pt-5 pb-5 mb-3">
+            <div class="p-2 flex-fill bd-highlight mb-3 mb-md-0">
+                <h5 class="places" style="color: #28357e">Informations</h5>
+                <p class="mb-0"><a href="#" style="color: white;">About us</a></p>
+                <p class="mb-0"><a href="#" style="color: white;">Find us</a></p>
+                <p class="mb-0"><a href="#" style="color: white;">Terms & conditions</a></p>
+                <p class="mb-0"><a href="#" style="color: white;">Cookies policy</a></p>
+            </div>
+            <div class="p-2 flex-fill bd-highlight mb-3 mb-md-0">
+                <h5 class="places" style="color: #28357e;">Help</h5>
+                <p class="mb-0"><a href="#" style="color: white;">How to deposit</a></p>
+                <p class="mb-0"> <a href="#" style="color: white;">How to withdrawp</a></p>
+                <p class="mb-0"><a href="#" style="color: white;">How to register</a></p>
+                <p class="mb-0"><a href="#" style="color: white;">Balance check</a></p>
+                <p class="mb-0"><a href="#" style="color: white;">Help Center</a></p>
+                <p class="mb-0"><a href="#" style="color: white;">Betting rules</a></p>
+            </div>
+            <div class="p-2 flex-fill bd-highlight mb-3 mb-md-0">
+                <h5 class="places" style="color:#28357e;">Contact Us</h5>
+                <p class="mb-0"><a href="#" style="color: white;">Email address</a></p>
+                <p class="mb-0"><a href="#" style="color: white;">Office Address</a></p>
+            </div>
+            <div class="p-2 flex-fill bd-highlight mb-3 mb-md-0">
+                <h5 class="places" style="color:#28357e;">News & partners</h5>
+                <p class="mb-0"><a href="#" style="color: white;">News</a></p>
+                <p class="mb-0"><a href="#" style="color: white;">Statistics</a></p>
+                <p class="mb-0"><a href="#" style="color: white;" >Partners</a></p>
+            </div>
+            <div id="conteneur" style="display: flex;flex-direction: column;">
+              <div class="p-2 flex-fill bd-highlight mb-3 mb-md-0">
+                <select name="language" id="language" style="height: 22px;background-color: #28357e;">
+                  <option value="francais">Francais</option>
+                  <option value="anglais">Anglais</option>
+                </select>
+              </div>
+              <div class="p-2 flex-fill bd-highlight mb-3 mb-md-0">
+                  <img src="{% static 'images/21+.jpg' %}" style="height: 50px;width: 50px; border-radius: 70px;">
+              </div>
+              <div class="p-2 flex-fill bd-highlight mb-5 mb-md-0">
+                <h3 style="color: #28357e; ">ICCSoft</h3> <small style="color: #28357e">Copyright &copy 2020</small>
+              </div>
+            </div>  
+         </div>
+        <div class="line mb-3 mx-auto"></div>
+    </div>
+
+       
+  </footer>
+</body>
+</html>

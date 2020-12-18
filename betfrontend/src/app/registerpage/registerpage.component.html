@@ -1,0 +1,65 @@
+<section>
+  <div class="container">
+  <div class="user signinBx">
+      <div class="imgBx">
+        <img src="assets/images/testimg.jpg"  alt="" />
+      </div>
+      <div class="formBx">
+        <form #f="ngForm" (ngSubmit)="f.form.valid && onRegister() ">
+            <h2>Create an account</h2>
+            <div class="row">
+            <div class="form-group col">
+              <input type="text" required #fullname="ngModel" [class.is-invalid]="fullname.invalid && fullname.touched" class="form-control" placeholder="Full Name" name="fullname" [(ngModel)]="input.fullname">
+              <small class="text-danger" [class.d-none]="fullname.valid || fullname.untouched" >Full Name is required</small>
+            </div>&nbsp;&nbsp;
+
+            <div class="form-group col">
+              <input type="text" required #username="ngModel" [class.is-invalid]="username.invalid && username.touched" class="form-control" placeholder="Username" name="username" [(ngModel)]="input.username">
+              <small class="text-danger" [class.d-none]="username.valid || username.untouched">Username is required</small>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col">
+              <input type="email" required #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  [class.is-invalid]="email.invalid && email.touched" class="form-control" placeholder="Email Address" name="email" [(ngModel)]="input.email">
+              <div *ngIf="email.errors && (email.invalid && email.touched)">
+                <small class="text-danger" *ngIf="email.errors.required">Email address is required</small>
+                <small class="text-danger" *ngIf="email.errors.pattern">Please enter a valid email address</small>
+              </div>
+            </div>&nbsp;&nbsp;
+          
+            <div class="form-group col">
+              <input type="tel" required #phone="ngModel" pattern="^((\\+237-?)|0)?[0-9]{9}$" [class.is-invalid]="phone.invalid && phone.touched" class="form-control" placeholder="Phone Number" name="phone" [(ngModel)]="input.phone">
+              
+              <div *ngIf="phone.errors && (phone.invalid && phone.touched)">
+                  <small class="text-danger" *ngIf="phone.errors.required">Phone Number is required</small>
+                  <small class="text-danger" *ngIf="phone.errors.pattern">Phone Number must be 9 digits</small>
+              </div>
+            </div>
+          </div>
+
+            <div class="form-group">
+              <input type="password" required #password="ngModel"  [class.is-invalid]="password.invalid && password.touched" class="form-control" placeholder="Password" name="password" [(ngModel)]="input.password">
+              <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small>
+            </div>
+            
+            <div class="form-group">
+              <input type="password" ngValidateEqual="password" #password1="ngModel" [class.is-invalid]="password1.invalid && password1.touched" class="form-control" placeholder="Confirm Password" name="password1" ngModel>
+              <div *ngIf="(password1.dirty || password1.touched) &&  password1.invalid">
+                <small  class="text-danger" *ngIf="password1.hasError('notEqual') && password.valid">Password Mismatch</small>
+              </div>
+            </div><br>
+
+            <div class="form-check mb-3">
+              <input class="form-check-input" (change)="changeCheck($event)" type="checkbox" name="agree">
+              <label class="form-check-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I declare to be over 21 years and  I accept the <a href=""> Terms & Conditions </a> of CameroonBet site</label>
+            </div>
+            <div class="form-group">
+              <button [disabled]="loading || disabledAgreement" type="submit" class="btn btn-primary ">Register</button>
+              <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+          </div>
+      </form>
+      </div>
+  </div>
+  </div>
+</section>
