@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:4200',
+    'http://127.0.0.1:4200',
 )
 # Application definition
 
@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'django.contrib.sites',
+    'chroniker',
 ]
 
 REST_FRAMEWORK = {
@@ -138,7 +140,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Douala'
 
 USE_I18N = True
 

@@ -5,20 +5,21 @@ import os
 import betapp.skrap
 
 class Command(BaseCommand):
+    print('dsdsdsdsdsd')
     help = 'Creating model objects according the file path specified'
 
     def add_arguments(self, parser):
         pass
         # parser.add_argument('match_file', type=str, help="file path")
 
-
+    
     def handle(self, *args, **options):
         match_file = '.././matches.csv'
 
         if not os.path.isfile(match_file):
             print('file not found!')
             return
-            
+        
         Match.objects.all().delete()
         with open(match_file, newline='', encoding='utf-8') as f:
             reader = csv.DictReader(f)

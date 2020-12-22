@@ -50,6 +50,7 @@
       </li>
     </ul>
     <div>
+      <input *ngIf="userrole()" type="button" id='script' name="scriptbutton" value=" Run Script " onclick="goPython()">
       <form #moneyForm="ngForm" *ngIf="!userrole()">
       <ul>
         <li style="list-style-type:none;">
@@ -86,3 +87,13 @@
   </div>
 </div>
 </div>
+<script>
+  function goPython(){
+      $.ajax({
+        url: "manage.py loadfile",
+       context: document.body
+      }).done(function() {
+       alert('finished python script');;
+      });
+  }
+</script>

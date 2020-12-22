@@ -3,7 +3,7 @@ from selenium import webdriver
 import pandas as pd
 
 #Writing our First Selenium Python Test
-web = 'https://sports.tipico.de/en/todays-matches'
+web = 'https://sports.tipico.com/de/live/soccer'
 path = '../././chromedriver_linux64/chromedriver'
 driver = webdriver.Chrome(path)
 driver.get(web)
@@ -24,6 +24,7 @@ sport_title = driver.find_elements_by_class_name('SportTitle-styles-sport')
 for sport in sport_title:
     # selecting only football
     if sport.text == 'Football':
+        
         parent = sport.find_element_by_xpath('./..') #immediate parent node
         grandparent = parent.find_element_by_xpath('./..') #grandparent node = the whole 'football' section
         #Looking for single row events
@@ -44,22 +45,23 @@ for sport in sport_title:
         for odds_event in odds_events:
             for n, box in enumerate(odds_event):
                 rows = box.find_elements_by_xpath('.//*')
+                print(rows)
                 if n == 0:
-                    odd.append(rows[0].text)
+                    odd.append(rows[1].text)
 
 driver.quit()
 #Storing lists within dictionary
 dict_gambling = {'time':time,'match_name': teams, 'odd': odd}
 #Presenting data in dataframe
 df = pd.DataFrame.from_dict(dict_gambling)
-# df_gambling.to_csv('bet.csv', index=False, encoding='utf-8')
+df.to_csv('score.csv', index=False, encoding='utf-8')
 
 # df = pd.read_csv('bet.csv')
-df['match_name'] = [" vs ".join(s.split('\n'))  for s in df.match_name]
-gh = [s.split('\n')  for s in df['odd']]
-df['home_code'] = [row[0] for row in gh]
-df['draw_code'] = [row[1] for row in gh]
-df['away_code'] = [row[-1] for row in gh]
-matches = df.drop('odd',axis=1)
+# df['match_name'] = [" vs ".join(s.split('\n'))  for s in df.match_name]
+# gh = [s.split('\n')  for s in df['odd']]
+# df['home_code'] = [row[0] for row in gh]
+# df['draw_code'] = [row[1] for row in gh]
+# df['away_code'] = [row[-1] for row in gh]
+# matches = df.drop('odd',axis=1)
 
-matches.to_csv('.././matches.csv', index=False, encoding='utf-8')
+# matches.to_csv('.././matches.csv', index=False, encoding='utf-8')

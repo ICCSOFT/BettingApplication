@@ -15,6 +15,7 @@ import Swal from 'sweetalert2';
 export class MatchesComponent implements OnInit {
   currentDate: number = Date.now();
   cote;
+  bal = 1000;
   items;
   pos;
   iden;
@@ -23,8 +24,10 @@ export class MatchesComponent implements OnInit {
   year;
   total;
   matches;
+  balance;
   selectedMatch;
   selectedGames;
+  
   constructor(private api: BetappService) {
 
     this.year  = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(this.currentDate)
@@ -266,18 +269,26 @@ s
   }
 
   placeBet = (x) => {
-    console.log(x)
-    this.selectedGames = {customer_name:sessionStorage.getItem('username'), match:this.items, odd:this.total,
-                          stake_amount:x, possible_winning:x*this.total}                    
-    this.api.placeBet(this.selectedGames).subscribe(
-      data => {
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: 'Your bet have been saved',
-          showConfirmButton: false,
-          timer: 2000
-        })
+    if(this.bal-10 <= x){
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Account balance is below amount staked',
+        showConfirmButton: false,
+        timer: 2000
+      })
+    }else{
+      this.selectedGames = {customer_name:sessionStorage.getItem('username'), match:this.items, odd:this.total,
+                          stake_amount:x, possible_winning:x*this.total}                 
+      this.api.placeBet(this.selectedGames).subscribe(
+        data => {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Your bet have been saved',
+            showConfirmButton: false,
+            timer: 2000
+          })
       },
 
       error => {
@@ -295,6 +306,6 @@ s
     // $('#moneyForm').children('input').val('')
     this.clearList()
   }
-  
+}
 
 }
