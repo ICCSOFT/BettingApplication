@@ -9,11 +9,13 @@ import { ValidateEqualModule } from 'ng-validate-equal';
 import { MatchesComponent } from './matches/matches.component';
 import { RegisterpageComponent } from './registerpage/registerpage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
+    AccountComponent,
     
       ],
   imports: [

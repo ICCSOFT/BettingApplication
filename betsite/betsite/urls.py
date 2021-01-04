@@ -23,7 +23,11 @@ from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
 router = routers.DefaultRouter()
 router.register('users', views.RegisterViewSet)
 router.register('matches', views.MatchViewSet)
+router.register('scores', views.ScoreViewSet)
 router.register('order', views.OrderViewSet)
+router.register('account', views.AccountViewSet)
+router.register('transaction', views.TransactionViewSet)
+
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API
 

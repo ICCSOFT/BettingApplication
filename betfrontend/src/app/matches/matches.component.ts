@@ -4,6 +4,7 @@ import { BetappService } from '../betapp.service';
 
 import * as $ from 'jquery'
 import Swal from 'sweetalert2';
+import { AccountComponent } from '../account/account.component';
 
 
 @Component({
@@ -27,6 +28,8 @@ export class MatchesComponent implements OnInit {
   balance;
   selectedMatch;
   selectedGames;
+  money_: { customer_name: string; amount: number; desc: string; };
+  accounts: number;
   
   constructor(private api: BetappService) {
 
@@ -66,7 +69,7 @@ export class MatchesComponent implements OnInit {
       }
     )
   }
-s
+  
   userrole = () => {
     if(sessionStorage.getItem('role') === 'true' && sessionStorage.getItem('username'))
     return true
@@ -269,43 +272,52 @@ s
   }
 
   placeBet = (x) => {
-    if(this.bal-10 <= x){
-      Swal.fire({
-        position: 'center',
-        icon: 'error',
-        title: 'Account balance is below amount staked',
-        showConfirmButton: false,
-        timer: 2000
-      })
-    }else{
-      this.selectedGames = {customer_name:sessionStorage.getItem('username'), match:this.items, odd:this.total,
-                          stake_amount:x, possible_winning:x*this.total}                 
-      this.api.placeBet(this.selectedGames).subscribe(
-        data => {
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Your bet have been saved',
-            showConfirmButton: false,
-            timer: 2000
-          })
-      },
-
-      error => {
+    this.api.getUserAccount(sessionStorage.getItem('username')).subscribe(
+      data => {
+        // this.accounts =data[0].balance_real.amount__sum;
+      if(data[0].balance_real.amount__sum-10 <= x){
         Swal.fire({
           position: 'center',
           icon: 'error',
-          title: 'Please Log in to place bet',
+          title: 'Account balance is below amount staked',
           showConfirmButton: false,
           timer: 2000
         })
-        console.log(error);
-      }
-    );
-    (<HTMLInputElement>document.getElementById("currency-field")).value='';
-    // $('#moneyForm').children('input').val('')
-    this.clearList()
+      }else{
+        this.selectedGames = {customer_name:sessionStorage.getItem('username'), match:this.items, odd:this.total,
+                            stake_amount:x, possible_winning:x*this.total}  
+        
+        this.money_= {customer_name:sessionStorage.getItem('username'),amount: -x, desc:'Place bet'}
+        this.api.registerWithdrawal(this.money_).subscribe();           
+        this.api.placeBet(this.selectedGames).subscribe(
+          data => {
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Your bet have been saved',
+              showConfirmButton: false,
+              timer: 2000
+            })
+        },
+        
+
+        error => {
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Please Log in to place bet',
+            showConfirmButton: false,
+            timer: 2000
+          })
+          console.log(error);
+        }
+      );
+      (<HTMLInputElement>document.getElementById("currency-field")).value='';
+      // $('#moneyForm').children('input').val('')
+      this.clearList()
   }
+}
+)
 }
 
 }

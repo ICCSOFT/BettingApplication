@@ -40,6 +40,34 @@ export class BetappService {
     return sessionStorage.getItem('token')
   }
 
+  getUserTransaction(customer): Observable<any>{
+    return this.http.get(this.baseurl + '/transaction/?username='+ customer, {headers: this.httpHeaders});
+  }
+
+  getUserAccount(username): Observable<any>{
+    return this.http.get(this.baseurl + '/account/?username='+ username, {headers: this.httpHeaders});
+  }
+
+  getOneUser(username): Observable<any>{
+    return this.http.get(this.baseurl + '/users/?username='+ username, {headers: this.httpHeaders})
+  
+  }
+  
+
+
+  registerDeposit(item): Observable<any> {
+    // console.log(item);
+     const body = {customer_name:item.customer_name, amount:item.amount, desc:item.desc};
+    return this.http.post(this.baseurl + '/transaction/', body, {headers: this.httpHeaders})
+  }
+   
+ 
+  registerWithdrawal(item_): Observable<any> {
+    console.log(item_);
+     const body_ = {customer_name:item_.customer_name, amount:item_.amount, desc:item_.desc};
+    return this.http.post(this.baseurl + '/transaction/', body_, {headers: this.httpHeaders})
+  }
+
   registerUser(userData): Observable<any> {
     return this.http.post(this.baseurl + '/users/', userData)
   }
@@ -110,11 +138,21 @@ export class BetappService {
   getAllMatches(): Observable<any>{
     return this.http.get(this.baseurl + '/matches/', {headers: this.httpHeaders})
   }
+
+  getAllScores(): Observable<any>{
+    return this.http.get(this.baseurl + '/scores/', {headers: this.httpHeaders})
+  }
+
   getOneMatch(id): Observable<any>{
     return this.http.get(this.baseurl + '/matches/' + id + '/', {headers: this.httpHeaders})
   }
   deleteMatch(id): Observable<any>{
     return this.http.delete(this.baseurl + '/matches/' + id + '/', {headers: this.httpHeaders})
+  }
+
+  setOneOrder(bet): Observable<any>{
+    const body = {match:bet.match,odd:bet.odd,stake_amount:bet.stake_amount,possible_winning:bet.possible_winning,finished:'True'}
+    return this.http.put(this.baseurl + '/order/'+ bet.id +'/?username=' + bet.username, body, {headers: this.httpHeaders})
   }
 
   getOneOrder(username): Observable<any>{

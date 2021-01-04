@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 CORS_ORIGIN_WHITELIST = (
-    'http://127.0.0.1:4200',
+    'http://localhost:4200',
 )
 # Application definition
 
@@ -98,9 +98,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'betsite.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+SITE_ID = 1
 
 DATABASES = {
     'default': {
