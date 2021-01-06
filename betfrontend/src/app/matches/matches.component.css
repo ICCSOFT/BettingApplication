@@ -14,8 +14,8 @@ th{
   color: rgb(44, 90, 241);
   text-transform: uppercase;
 }
-tr:nth-of-type(odd) {
-  background: rgb(197, 179, 88);
+tr:nth-of-type(even) {
+  background: rgb(236, 235, 235);
 }
 
 td{
@@ -70,12 +70,12 @@ td{
     display:inline-block;
 }
 .divider2{
-  width:30px;
+  width:15px;
   height:auto;
   display:inline-block;
 }
 .divider3{
-  width:55px;
+  width:35px;
   height:auto;
   display:inline-block;
 }
@@ -89,4 +89,33 @@ td{
   width: 90%;
   direction: rtl;
 
+}
+
+
+input[type="radio"]{
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+label {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fcfcfc;
+  color: rgb(0, 0, 0);
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 2px solid rgb(167, 163, 163);
+  transition: all .3s ease-out;
+}
+
+input[type="radio"]:checked + label{
+  background-color: #566ef3;
+}
+
+input[type="radio"]:hover + label {
+  background:  #1d04aa;
+  cursor: pointer;
 }

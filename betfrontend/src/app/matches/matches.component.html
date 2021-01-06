@@ -1,13 +1,16 @@
-<div class="row">
-  <div class="col-8">
+<div class="row" style="background-color: rgb(209, 209, 209);">
+  <div class="col-1">
+
+  </div>
+  <div class="col-7">
     <h1>List of Matches</h1>
     <div class="card card-body">
       <p>Today {{day}} - {{month}} - {{year}}</p>
-      <table class="table table-sm">
+      <table class="table table-bordered">
         
           <tr>
-            <th width="15%" >Time</th>
-            <th width="30%">Matches</th>
+            <th>Time</th>
+            <th>Matches</th>
             <th>
               <div class="divider2"></div>
               1
@@ -16,18 +19,20 @@
               <div class="divider3"></div>
               2
             </th>
-            <th></th>
             
           </tr>
           <tr *ngFor="let match of matches; let i = index">
-            <td width="15%" style="font-size: 15px; font-weight: bold;">{{ match.time.replace(":00", "")}}</td>
-            <td width="30%" style="font-size: 15px; font-weight: bold;">{{match.match_name}}</td>
+            <td style="font-size: 15px; font-weight: bold;">{{ match.time.replace(":00", "")}}</td>
+            <td style="font-size: 15px; font-weight: bold;">{{match.match_name}}</td>
             <td>
-              <button type="button" style="padding: 0px 10px; font-size: small; min-width: 80px;" class="btn btn-success btn-md"><label><input type="radio" id="submit1" name={{match.id}} (change)="clickMatch(match, match.home_code + ' -1')">{{match.home_code | number:'1.2-2'}}</label></button>
-              <div class="divider"></div>
-              <button type="button" style="padding: 0px 10px; font-size: small; min-width: 80px;" class="btn btn-success btn-md"><label><input type="radio" id="submit2" name={{match.id}} (change)="clickMatch(match, match.draw_code + ' -X')">{{match.draw_code | number:'1.2-2'}}</label></button>
-              <div class="divider"></div>
-              <button type="button" style="padding: 0px 10px; font-size: small; min-width: 80px;" class="btn btn-success"><label><input type="radio" id="submit3" name={{match.id}} (change)="clickMatch(match, match.away_code + ' -2')">{{match.away_code | number:'1.2-2'}}</label></button>
+                <span style="padding: 0px 2px;"><input type="radio" id='{{match.home_code}} + {{match.id}}' name={{match.id}} (change)="clickMatch(match, match.home_code + ' -1')"><label style="padding: 0px 2px; font-size: small; font-weight: bold; min-width: 50px;" for='{{match.home_code}} + {{match.id}}'>{{match.home_code | number:'1.2-2'}}</label></span>
+                <span style="padding: 0px 2px;"><input type="radio" id='{{match.draw_code}} + {{match.id}}' name={{match.id}} (change)="clickMatch(match, match.draw_code + ' -X')"><label style="padding: 0px 2px; font-size: small; font-weight: bold; min-width: 50px;" for='{{match.draw_code}} + {{match.id}}'>{{match.draw_code | number:'1.2-2'}}</label></span>
+                <span style="padding: 0px 2px;"><input type="radio" id='{{match.away_code}} + {{match.id}}' name={{match.id}} (change)="clickMatch(match, match.away_code + ' -2')"><label style="padding: 0px 2px; font-size: small; font-weight: bold; min-width: 50px;" for='{{match.away_code}} + {{match.id}}'>{{match.away_code | number:'1.2-2'}}</label></span>
+              <!-- <button type="button" style="padding: 0px 10px; font-size: small; min-width: 80px;" class="btn btn-success btn-md"><label><input type="radio" id="submit1" name={{match.id}} (change)="clickMatch(match, match.home_code + ' -1')">{{match.home_code | number:'1.2-2'}}</label></button> -->
+              <!-- <div class="divider"></div>s -->
+              <!-- <button type="button" style="padding: 0px 10px; font-size: small; min-width: 80px;" class="btn btn-success btn-md"><label><input type="radio" id="submit2" name={{match.id}} (change)="clickMatch(match, match.draw_code + ' -X')">{{match.draw_code | number:'1.2-2'}}</label></button> -->
+              <!-- <div class="divider"></div> -->
+              <!-- <button type="button" style="padding: 0px 10px; font-size: small; min-width: 80px;" class="btn btn-success"><label><input type="radio" id="submit3" name={{match.id}} (change)="clickMatch(match, match.away_code + ' -2')">{{match.away_code | number:'1.2-2'}}</label></button> -->
             </td>
             <td (click)="deleteMatch(match.id)" *ngIf="userrole()"><button class="btn btn-danger btn-sm">Delete</button></td>
           </tr>
@@ -79,21 +84,9 @@
         <li style="margin: 2px; list-style: none" class="btn-group">          
           <button class="button button2" (click)="placeBet(moneyForm.value['currency-field'])">Place Bet</button>
           <button class="button button3"><i class="fa fa-trash-o" aria-hidden="true" style="font-size:32px; color: beige;" (click)="clearList()" ></i></button>
-          
         </li>
       </ul>
     </form>
     </div>
   </div>
 </div>
-</div>
-<script>
-  function goPython(){
-      $.ajax({
-        url: "manage.py loadfile",
-       context: document.body
-      }).done(function() {
-       alert('finished python script');;
-      });
-  }
-</script>

@@ -46,13 +46,6 @@ export class RegisterpageComponent implements OnInit{
     this.loading =true;
     this.api.registerUser(this.input).subscribe(
     data => {
-      // Swal.fire({
-      //   position: 'center',
-      //   icon: 'success',
-      //   title: 'User ' + this.input.username + ' has been created!',
-      //   showConfirmButton: false,
-      //   timer: 2000
-      // })
       myCompOneObj.onLogin({'username': this.input.username, 'password': this.input.password});
       this.api.getloginUser(this.input.username).subscribe(
         data =>{

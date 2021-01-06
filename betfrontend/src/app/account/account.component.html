@@ -2,8 +2,9 @@
 	<div class="container">
 		<div class="container-fluid">
 			<div>
-				<h2 style="text-align: center;"> Welcome <strong style="color: royalblue;">{{getUsername()}} </strong> to your Kamer Bet's account </h2>
+				<h2 style="text-align: center;"> Welcome <strong style="color: royalblue;">{{this.username}} </strong> to your Kamer Bet's account </h2>
 			</div>
+			
 			<div class="btn-group" style="width: 100%">
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Deposit</button>
 
@@ -24,11 +25,6 @@
 						        		<form #f="ngForm">	
 
 										<p style="text-align: center;">Make Deposit</p>
-<!-- 										<div class="form-group">
-											<label>Enter your phone number: </label>
-											<input type="tel" class="form-control" name="amount" ngModel>
-											<br>
-										</div> -->
 
 										<div class="form-group">
 											<label>Enter your amount: </label>
@@ -76,11 +72,6 @@
 						        	<form #g="ngForm">	
 
 										<p style="text-align: center;">Make Withdrawal</p>
-<!-- 										<div class="form-group">
-											<label>Enter your phone number: </label>
-											<input type="tel" class="form-control" name="amount" ngModel>
-											<br>
-										</div> -->
 
 										<div class="form-group">
 											<label>Enter your amount: </label>
@@ -180,11 +171,3 @@
 				</div>
 			</div>
 	</div>
-<!-- </section> -->
-
-<!-- <script type="text/javascript">
-	$("#full").attr(value)= this.infos. ;
-	$("#name").attr(value)= ;
-	$("#mail").attr(value)= ;
-	$("#pho").attr(value)= ;
-</script> -->

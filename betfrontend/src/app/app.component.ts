@@ -9,27 +9,25 @@ import Swal from 'sweetalert2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-      // http options used for making API calls
-      private httpOptions: any;
- 
       // the actual JWT token
       public token: string;
- loginData;
- userData;   
- role; 
+      loginData;
+      userData;   
+      role; 
       // the token expiration date
       public token_expires: Date;
      
       // the username of the logged in user
-      public username: string;
+      username: string;
      
       // error messages received from the login attempt
       public errors: any = [];
       
   input;
   constructor(private api: BetappService,
-              private router: Router          
-    ){ }
+              private router: Router 
+                
+    ){ this.username =  sessionStorage.getItem('username')  }
 
   ngOnInit() {
     this.input = {
@@ -80,19 +78,15 @@ export class AppComponent {
     );
   }
 
-getUsername(){
-  return sessionStorage.getItem('username')
-}
 
-logout(){
-  // (<HTMLInputElement>document.getElementById("email-field")).value='';
-  // (<HTMLInputElement>document.getElementById("pass-field")).value='';
-  this.api.logout();
-  this.refresh()
-  }
+  logout(){
+    this.api.logout()
+    this.refresh()
+    }
+
   refresh(): void {
     window.location.reload();
-  }
+    }
   logins(){
     if(this.api.loggedIn()){
       return true
@@ -110,6 +104,11 @@ logout(){
         this.errors = err['error'];
       }
     );
+  }
+
+  userrole = () => {
+    if(sessionStorage.getItem('role') === 'true' && this.username)
+    return true
   }
 
   tokeniser() {

@@ -13,7 +13,7 @@
         </form>
       </div>
       <div class="row d-flex justify-content-end align-items-center" *ngIf="logins()">
-        <div class="col-sm-12" style = "text-transform:capitalize;">Welcome, {{ getUsername() }}.<br />
+        <div class="col-sm-12" style = "text-transform:capitalize;">Welcome, {{ username }}.<br />
           <button (click)="logout()" class="btn btn-primary">Log Out</button>
         </div>
       </div>
@@ -23,7 +23,8 @@
   <div class="nav-scroller py-6 mb-9">
     <nav class="nav d-flex justify-content-between" style="background-color: #2f45c2;">
       <a class="p-2" style="color: rgb(252, 239, 62);" href="/matches" routerLink="/matches" routerLinkActive="active">Sport</a>
-      <a class="p-2" style="color: rgb(252, 239, 62);" routerLink="/betslip" routerLinkActive="active">Bet Slip</a>
+      <a class="p-2" style="color: rgb(252, 239, 62);" routerLink="/betslip" *ngIf="!userrole()" routerLinkActive="active">Bet Slip</a>
+      <a class="p-2" style="color: rgb(252, 239, 62);" routerLink="/betslip" *ngIf="userrole()" routerLinkActive="active">Client</a>
       <a class="p-2" style="color: rgb(252, 239, 62);" href="/account" routerLinkActive="active">Account</a>
       <a class="p-2" style="color: rgb(252, 239, 62);" routerLinkActive="active">Help</a>
       <a class="p-2" style="color: rgb(252, 239, 62);" href="#">Bonus</a>
