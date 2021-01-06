@@ -40,6 +40,7 @@ class Order(models.Model):
     stake_amount       = models.FloatField()
     possible_winning   = models.FloatField()
     finished           = models.BooleanField(default=False)
+    cancelled          = models.BooleanField(default=False)
     date_ordered       = models.DateTimeField(auto_now_add=True)
     
 
@@ -47,8 +48,6 @@ class Order(models.Model):
         return self.customer.username
 
 class Account(models.Model):
-
-
     customer = models.OneToOneField('User',primary_key=True, on_delete=models.CASCADE)
     balance  = models.IntegerField(default=0)
     datetime = models.DateTimeField(auto_now_add=True)
@@ -60,13 +59,11 @@ class Account(models.Model):
 @receiver(post_save, sender=User)
 def create_account(sender, instance, created, *args, **kwargs):
     if created:
-        print("--------", instance)
         Account.objects.create(customer=instance)
 
 
 
 class Transaction(models.Model):
-
     customer = models.ForeignKey('Account', on_delete=models.SET_NULL,null=True)
     datetime = models.DateTimeField(auto_now_add=True)
     desc     = models.CharField(max_length=250)

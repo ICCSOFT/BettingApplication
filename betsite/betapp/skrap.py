@@ -52,9 +52,7 @@ driver.quit()
 dict_gambling = {'time':time,'match_name': teams, 'odd': odd}
 #Presenting data in dataframe
 df = pd.DataFrame.from_dict(dict_gambling)
-# df_gambling.to_csv('bet.csv', index=False, encoding='utf-8')
 
-# df = pd.read_csv('bet.csv')
 df['match_name'] = [" vs ".join(s.split('\n'))  for s in df.match_name]
 gh = [s.split('\n')  for s in df['odd']]
 df['home_code'] = [row[0] for row in gh]

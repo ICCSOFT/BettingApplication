@@ -3,8 +3,9 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 from .serializer import MatchSerializer, MatchMiniSerializer, OrderSerializer,UserSerializer,RegisterSerializer,AccountSerializer, TransactionSerializer,ScoreMiniSerializer, ScoreSerializer
 from .models import *
-from rest_framework.authentication import TokenAuthentication
+from rest_framework.authentication import BasicAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.views import APIView
 
 class MatchViewSet(viewsets.ModelViewSet):
     """ 
@@ -51,6 +52,28 @@ class OrderViewSet(viewsets.ModelViewSet):
         context.update({"request": self.request})
         return context
 
+class DeactiveUserAPIView(APIView):
+    authentication_classes = (BasicAuthentication,TokenAuthentication,)
+    permission_classes = (AllowAny,)
+
+    def post(self,request):
+        user = User.objects.get(id=request.data['id'])
+        user.is_active = request.data['is_active']
+        user.save()
+        data = {"user":user.username, 'is_active': user.is_active}
+        return Response(data)
+
+class ActiveUserAPIView(APIView):
+    authentication_classes = (BasicAuthentication,TokenAuthentication,)
+    permission_classes = (AllowAny,)
+
+    def post(self,request):
+        order = Order.objects.get(id=request.data['id'])
+        order.cancelled = request.data['cancelled']
+        order.save()
+        data = {'cancelled': order.cancelled}
+        return Response(data)
+
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
@@ -63,6 +86,7 @@ class RegisterViewSet(viewsets.ModelViewSet):
     serializer_class = RegisterSerializer
     authentication_classes = (TokenAuthentication,)
     permission_classes = (AllowAny,)
+
 
     def list(self, request, *args, **kwargs):
         userd = User.objects.all()
@@ -96,9 +120,7 @@ class TransactionViewSet(viewsets.ModelViewSet):
        
         transaction = Transaction.objects.all()
         if 'username' in request.query_params:
-            print("--------")
             transaction=transaction.filter(customer__customer__username=request.query_params['username'])
-            print("transaction   " , transaction)
         serializer = TransactionSerializer(transaction, many=True)
         return Response(serializer.data)
 
