@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="container-fluid">
 			<div>
-				<h2 style="text-align: center;"> Welcome <strong style="color: royalblue;">{{this.username}} </strong> to your Kamer Bet's account </h2>
+				<h1 style="text-align: center;"> Welcome <strong style="color: royalblue;">{{this.username}} </strong> to your Kamer Bet's account </h1>
 			</div>
 			
 			<div class="btn-group" style="width: 100%">
@@ -16,7 +16,7 @@
 					        <!-- Modal Header -->
 					        <div class="modal-header">
 					          <h4 class="modal-title" style="text-align: center;font-weight:bold;">Do your Deposit </h4>
-					          <button type="button" class="close" data-dismiss="modal">×</button>
+					          <button type="button" class="close" data-dismiss="modal"> ×</button>
 					        </div>
 					        
 					        <!-- Modal body -->
@@ -100,74 +100,73 @@
 					      </div>
 					    </div>
 					  </div>
-
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mYModal" > History of the account</button>
-						  <div class="modal fade" id="mYModal">
-						    <div class="modal-dialog ">
-						      <div class="modal-content">
-						        <div class="modal-header">
-						          <h4 class="modal-title">History of transactions</h4>
-						          <button type="button" class="close" data-dismiss="modal">×</button>
-						        </div>
-						        <div *ngFor="let transaction of transactions ;let t=index" class="modal-body">
-						          <div class="row">
-						          	<div class="col-sm-2">
-						          		<p>{{transaction.datetime | date:'MM/dd HH:mm' }}</p>
-						          	</div>
-						          	<div class="col">
-						          		<p>{{transaction.amount}} </p>
-						          	</div>
-						          	<div class="col">
-						          		<p>{{transaction.desc}}</p>
-						          	</div>
-						          </div>
-						        </div>
-						        <div class="modal-footer">
-						          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        </div>
-						      </div>
-						    </div>
-						  </div>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mYModal">Personal Info</button>
+				<div class="modal fade" id="mYModal">
+					<div class="modal-dialog ">
+					  <div class="modal-content">
+						<div class="modal-header" style="background-color: blue; color: white;">
+						  <h2 class="modal-title">Account Informations</h2>
+						  <button type="button" class="close" data-dismiss="modal">×</button>
+						</div>
+							<div class="container" >
+								<form #h="ngForm">
+									<br>
+									<div>
+										<label for="fullname"><h3><strong>Full Name:&nbsp;&nbsp; </strong></h3></label>
+										<input class="dis"  name="fullname" id="full" value="" disabled="disabled" [(ngModel)]="infos.fullname"> 
+									</div>
+			
+									<div>
+										<label for="username"><h3><strong>Username:&nbsp;&nbsp; </strong></h3></label>
+										<input class="dis" name="username" id="name" value="" disabled="disabled" [(ngModel)]="infos.username"> 
+									</div>
+			
+									<div>
+										<label for="email"><h3><strong>Email:&nbsp;&nbsp; </strong></h3></label>
+										<input class="dis" name="email" id="mail" value="" disabled="disabled" [(ngModel)]="infos.email">
+									</div>
+			
+									<div>
+										<label for="phone"><h3><strong>Phone Number:&nbsp;&nbsp; </strong></h3></label>
+										<input class="dis" name="phone" id="pho" value="" disabled="disabled" [(ngModel)]="infos.phone"> 
+									</div>
+									<br>
+							</form>
+						</div>
+						<div class="modal-footer">
+						  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+						</div>
+					  </div>
+					</div>
+				  </div>
 			</div>
 		</div>
-
-			<div class="container-fluid">
-				<br>
-				<br>
-				<div  style="text-align: center;">
-				<p>Your balance is : <strong style="color: green;">{{accounts | number:'1.2-2'}} </strong> XAF</p>
-				
-				</div>
-
-				<div style="border-style: solid; border-radius: 15px;">
-				
-					<h3 style="font-weight: bold; text-align: center;">Your Personal Account's Informations</h3> <br>
-					<br>
-					<div class="container" >
-
-						<form #h="ngForm">
-
-							<div>
-							<label for="fullname" >Full name</label>
-							<input style="background-color: grey; color: yellow;"  name="fullname" id="full" value="" disabled="disabled" [(ngModel)]="infos.fullname"> 
-							</div>
-
-							<div>
-							<label for="username" >Username</label>
-							<input style="background-color: grey; color: yellow;"  name="username" id="name" value="" disabled="disabled" [(ngModel)]="infos.username"> 
-							</div>
-
-							<div>
-							<label for="email">Email</label>
-							<input style="background-color: grey; color: yellow;"  name="email" id="mail" value="" disabled="disabled" [(ngModel)]="infos.email">
-							</div>
-
-						<div  style="text-align: center;">
-							<label for="phone">Phone number</label>
-							<input style="background-color: grey; color: yellow;"  name="phone" id="pho" value="" disabled="disabled" [(ngModel)]="infos.phone"> 
-						</div>
-
-					</form>
+		<br>
+		<button (click)="printToCart('printSectionId')" style="float: right; opacity: 0.6; transition: 0.3s;" class="btn btn-success">Print transaction</button>
+	<div class="container-fluid p-5" id="printSectionId">
+	
+		<div  style="text-align: center;">
+			<h1 style="font-size: xx-large;">Your balance is : <strong style="color: green; font-size: xx-large; ">{{accounts | number:'1.2-2'}} </strong> XAF</h1>			
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="border shadow " id="printSectionId">
+					<table class="table table-bordered">
+        
+						<tr>
+						  <th>Date/Time</th>
+						  <th>Description</th>
+						  <th>Debit</th>
+						  <th>Credit</th>
+						</tr>
+						<tr *ngFor="let transaction of transactions;let t=index">
+						  <td>{{transaction.datetime | date:'MM/dd HH:mm' }}</td>
+						  <td>{{transaction.desc}}</td>
+						  <td>{{debit[t]}}</td>
+						  <td>{{credit[t]}}</td>
+						</tr>
+					</table>
 				</div>
 			</div>
+		</div>
 	</div>

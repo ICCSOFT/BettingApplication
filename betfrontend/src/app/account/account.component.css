@@ -1,0 +1,30 @@
+.dis{
+    background-color: rgb(255, 255, 255);
+     color: rgb(6, 6, 7); 
+     float:right;
+     font-size: medium;
+}
+
+body {
+  -webkit-print-color-adjust: exact;
+}
+th{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(44, 90, 241);
+    text-transform: uppercase;
+  }
+  tr:nth-of-type(even) {
+    background: rgb(236, 235, 235);
+  }
+  
+  td{
+    padding: 15px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300px;
+    height: 4px;
+    font-size: 15px;
+    color: rgb(13, 20, 34);
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+  }
