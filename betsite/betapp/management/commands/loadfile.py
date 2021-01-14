@@ -2,8 +2,8 @@ from django.core.management.base import BaseCommand
 import csv
 from betapp.models import Match, Score
 import os
-# import betapp.skrap
-import betapp.run
+# import betapp.scoreget
+# import betapp.matchget
 import djqscsv
 import pandas as pd
 
