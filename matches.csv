@@ -1,101 +1,64 @@
 time,match_name,home_code,draw_code,away_code
-20:45,Bayer Leverkusen vs Eintracht Frankfurt,1.90,3.90,3.60
-19:00,Bayern M. II vs SV Meppen,1.95,3.70,3.60
-19:00,1. FC Magdeburg vs 1. FC Saarbrucken,3.00,3.40,2.30
-19:00,SpVgg Unterhaching vs SC Verl,2.60,3.60,2.50
-19:00,Home Teams Goals vs Away Teams Goals,1.90,6.50,2.30
-17:00,FC Homburg vs SC Freiburg II,2.25,3.20,2.90
-19:00,Sheffield United vs Newcastle United,2.50,3.10,3.00
-21:15,Burnley FC vs Manchester United,7.50,4.50,1.42
-21:15,Wolverhampton vs Everton FC,2.50,3.20,2.85
-20:00,Luton Town vs Queens Park Rangers,2.15,3.20,3.30
-20:45,AFC Bournemouth vs Millwall FC,1.62,3.60,5.30
-20:00,Charlton Athletic vs Rochdale AFC,1.72,3.60,4.50
-20:00,Harrogate Town AFC vs Carlisle United,3.80,3.40,1.90
-20:00,Exeter City vs Bolton Wanderers,1.72,3.70,4.30
-20:00,Scunthorpe Utd vs Salford City FC,3.20,3.20,2.20
-20:00,Halifax Town vs Hartlepool United,2.65,3.30,2.50
-20:45,Chorley FC vs Leamington FC,2.05,3.30,3.20
-20:45,Farsley Celtic vs Darlington FC,2.70,3.10,2.45
-20:45,Dartford FC vs Billericay Town,1.45,4.10,6.00
-20:45,Braintree Town vs Oxford City,4.30,3.60,1.70
-20:45,Welling United vs St Albans City,3.50,3.30,1.95
-20:45,Ebbsfleet United vs Concord Rangers,1.85,3.50,3.60
-20:45,Eastbourne Borough vs Maidstone United FC,2.90,3.30,2.20
-20:45,Tonbridge Angels vs Chippenham Town,2.75,3.10,2.40
-14:00,Bristol City U23 vs Colchester Utd U23,1.90,3.60,3.20
-14:00,Swansea City U23 vs Millwall U23,3.60,4.00,1.72
-18:30,Hull City vs Fleetwood Town,2.30,3.20,2.80
-19:00,Sunderland AFC vs Port Vale,1.47,3.90,6.00
-20:00,Oxford United vs Cambridge United,1.67,3.60,4.40
-20:00,Lincoln City vs Accrington Stanley,2.00,3.30,3.30
-20:00,Bristol Rovers vs AFC Wimbledon,2.20,3.40,2.85
-20:00,Peterborough United vs Portsmouth FC,2.00,3.60,3.10
-20:45,Northampton Town vs Milton Keynes Dons,3.20,3.10,2.15
-19:00,Granada CF vs CA Osasuna,2.35,3.00,3.30
-21:30,Atletico Madrid vs Sevilla FC,1.95,3.10,4.50
-16:30,UE Olot vs Espanyol Barcelona B,2.35,2.90,2.90
-19:00,UD Levante (W) vs EDF Logrono (W),1.22,5.50,8.50
-20:45,AC Milan vs FC Torino,1.50,4.40,6.00
-13:45,Bursaspor vs Antalyaspor,3.00,3.50,2.15
-16:45,Sivasspor vs Adana Demirspor,1.70,3.70,4.50
-18:45,Yeni Malatyaspor vs Galatasaray Istanbul,3.60,3.40,1.95
-15:00,Rio Ave FC vs Estoril Praia,1.95,3.10,3.70
-18:00,Moreirense FC vs CD Santa Clara,2.80,2.75,2.65
-19:00,CD Nacional vs FC Porto,8.00,4.40,1.33
-22:15,CF Estrela vs Benfica Lisbon,11.00,6.50,1.17
-18:45,Vitesse Arnhem vs FC Utrecht,2.30,3.60,2.85
-21:00,Heracles Almelo vs FC Emmen,1.72,3.90,4.50
-20:45,KV Oostende vs KAS Eupen,1.85,3.80,3.80
-23:15,Coquimbo Unido vs Defensa y Justicia,6.20,3.20,1.65
-14:00,Budafoki MTE vs FC Koper,2.85,3.80,2.00
-15:00,TSV Hartberg vs Blau Weiss Linz,1.42,4.70,5.00
-15:00,SV Ried vs Wacker Innsbruck,1.50,3.80,5.50
-16:00,FC Zorya Lugansk vs RKS Rakow Czestochowa,1.67,3.90,3.90
-14:00,Tansania vs DR Congo,2.60,3.00,2.60
-16:30,United Arab Emirates vs Iraq,2.25,3.00,3.30
-17:30,Morocco vs Guinea,1.35,3.90,8.50
-13:00,FC Spartak Trnava vs AS Trencin,2.30,3.50,2.55
-19:30,Dundee United vs St Johnstone FC,3.90,3.20,1.95
-21:10,Ituzaingo vs Victoriano Arenas,2.10,3.10,3.20
-21:10,Sportivo Italiano vs San Martin de Burzaco,2.25,3.00,3.00
-21:10,Berazategui vs CA Central Cordoba,2.40,3.00,2.75
-21:10,Deportivo Espanol vs Ferrocarril Midland,2.90,3.20,2.20
-21:10,El Porvenir vs Mutual Leandro Niceforo Alem,2.50,3.00,2.65
-21:10,Excursionistas vs Lujan,2.25,3.00,3.00
-21:10,Claypole vs Def. de Cambaceres,1.57,3.30,5.80
-21:10,CSD Liniers vs Sportivo Barracas,2.00,3.20,3.30
-21:10,CA Atlas vs Deportivo Paraguayo,2.30,2.90,3.00
-21:10,Tristan Suarez vs Argentino de Quilmes,1.95,3.00,3.70
-21:10,Villa San Carlos vs San Telmo,2.60,2.80,2.70
-21:10,CA Comunicaciones vs CA Acassuso,2.50,2.65,3.00
-16:00,Gaz M. Medias vs FC Voluntari,2.10,3.40,3.20
-18:45,CS Univer. Craiova vs Sepsi Osk,1.95,3.20,3.90
-23:15,Clube Nautico vs America Futebol Clube,3.60,2.80,2.15
-23:15,Botafogo FC vs Sampaio Corrêa Futebol Clube,2.45,2.85,2.90
-23:15,Paraná Clube vs Centro Sportivo Alagoano,3.30,2.75,2.30
-23:15,Grêmio Esportivo Brasil vs Esporte Clube Juventude,3.00,2.70,2.50
-14:30,O'Higgins FC vs Deportes Iquique,1.70,3.50,4.40
-14:00,Deportes Valdivia vs Santiago Morning,3.60,3.10,1.95
-14:00,San Luis Quillota vs Deportes Temuco,3.10,3.10,2.15
-22:00,Deportes Magallanes vs Deportes Santa Cruz,1.42,4.00,6.20
-22:30,Deportes Melipilla vs AC Barnechea,1.35,4.20,7.50
-15:00,Northeast United FC vs Bengaluru FC,3.70,3.00,1.95
-12:00,Naft Masjed Soleyman FC vs Shahr Khodro FC,2.65,2.45,3.10
-14:15,Al Rayyan SC vs Qatar SC Doha,2.10,3.40,2.90
-16:45,Al-sadd vs Al-Duhail SC,1.55,4.30,4.30
-16:45,Al-Sailiya SC vs Al Kharaitiyat SC,1.60,4.10,4.10
-13:00,Al-Baqaa vs That Ras,2.40,3.00,2.75
-13:00,Ittihad AL Ramtha vs Sama AL Sarhan,2.40,3.00,2.75
-13:00,Al-Yarmouk vs Kfarsoum,2.15,3.10,3.10
-13:55,Muscat vs AL Etihad,2.20,3.10,3.00
-14:00,Al-Rustaq vs Sohar,2.30,3.10,2.80
-16:15,Saham vs Al Seeb,5.00,3.60,1.57
-17:00,Al Kuwait SC vs Al Qadsia,2.55,3.10,2.55
-14:00,Africain vs ES Sahel,2.50,2.75,2.90
-14:00,Stade Tunisien vs ES Metlaoui,2.25,2.50,3.70
-13:30,Smouha SC vs National Bank,2.85,2.65,2.60
-16:00,Al Masry Club vs El Zamalek,4.10,2.90,1.90
-16:00,Al Moqawloon Al Arab vs Ceramica Cleopatra,2.00,2.90,3.70
-18:30,Al Ahly Cairo vs El-Entag El-Harby,1.15,5.70,15.00
-21:00,Senglea Athletic vs Sirens FC,6.70,4.20,1.37
+21:00,Arsenal FC vs Crystal Palace,1.65,3.70,5.70
+21:00,Real Madrid vs Athletic Bilbao,1.57,3.90,5.80
+17:30,US Sassuolo vs Spal 2013,1.57,4.20,5.30
+21:15,Atalanta Bergamo vs Cagliari Calcio,1.25,6.20,10.00
+16:45,Alanyaspor vs B.B. Erzurumspor,1.35,4.80,7.50
+18:45,Fenerbahce vs Kasimpasa,1.37,4.50,7.50
+15:00,AD Fafe vs Belenenses Lissabon,4.20,3.40,1.75
+21:30,Gil Vicente FC vs Academico Viseu,1.65,3.30,5.20
+12:00,CO DO Montijo vs Praiense,4.20,3.00,1.85
+18:45,SC Heerenveen vs RKC Waalwijk,1.57,4.20,5.30
+20:00,FC Twente Enschede vs Ajax Amsterdam,8.50,5.70,1.30
+21:00,Willem II Tilburg vs FC Groningen,3.30,3.40,2.15
+12:00,Sonderjyske vs Odense BK,2.40,3.00,2.75
+13:00,Dinamo Zagreb vs Fehervar FC,1.55,4.30,4.30
+14:00,FK Neftchi Baku vs Keshla FK,1.57,3.90,4.50
+14:00,AC Horsens vs Skive IK,1.37,4.70,5.80
+21:45,Defensa y Justicia vs CA Aldosivi,2.05,3.20,3.60
+16:15,Atromitos Athens vs Lamia,1.85,3.10,4.50
+18:30,Aris Thessaloniki FC vs AEK Athens FC,3.00,2.85,2.50
+22:45,Cruz Azul FC (W) vs Club Leon (W),1.80,3.50,3.70
+16:00,FC Botosani vs FC Arges Pitesti,1.45,4.10,6.70
+19:00,CFR Cluj vs ACS FC Academica Clinceni,1.40,4.10,8.00
+23:15,Operário Ferroviário Esporte Clube vs Clube de Regatas Brasil,2.25,2.80,3.30
+22:00,Gremio Anapolis GO vs Goianesia GO,3.10,3.30,2.05
+21:00,Sporting FC vs CS Herediano,3.10,3.20,2.15
+21:00,Everton de Vina Del Mar vs Audax Italiano,1.65,3.70,4.40
+23:15,Universidad de Chile vs CD Palestino,3.30,3.30,2.00
+22:15,Jocoro FC vs Municipal Limeno,2.40,3.00,2.75
+23:30,Deportivo Pasto vs America de Cali,2.45,2.55,3.20
+15:00,FC Goa vs Jamshedpur,1.90,3.20,3.60
+11:30,Sudeva Delhi FC vs Indian Arrows,1.57,3.50,5.20
+14:30,Mohammedan SC vs Churchill Brothers SC,3.10,3.10,2.15
+16:00,Al Hala vs Al Ittifaq BHR,1.33,4.70,6.70
+11:30,Foolad Novin Ahvaz vs Melli Hafari Ahvaz,1.55,3.60,5.00
+11:30,Shahrdari Hamedan vs Espad Tehran,1.60,3.60,4.50
+15:45,AL Waab SC vs Al Shamal,8.00,6.00,1.20
+15:45,Mesaimeer SC vs Al Shahaniya,4.00,3.80,1.65
+15:45,Lusail vs Al Bidda SC,3.30,3.30,1.95
+15:45,Al Muaither SC vs Al Markhiya,2.70,3.60,2.10
+15:00,Al-Jazeera C. A. vs Shabab AL Ordun,1.35,4.40,6.80
+13:00,Blama vs Al-Arabi,1.22,5.00,10.00
+13:00,Al-jalil vs Dar Al Dawa,1.80,3.20,4.10
+13:30,Al Faisaly vs AL Qadisiyah,1.85,3.50,3.50
+13:55,Al Ain vs AL Shabab FC (ksa),3.60,3.40,1.85
+15:45,Al Ettifaq vs Al Batin,1.70,3.90,3.80
+15:50,Al Fateh SC vs Al Taawon,2.40,3.20,2.60
+18:10,Al Ittihad Jeddah vs Abha Club,1.42,4.20,5.80
+14:00,JSM Skikda vs CS Constantine,2.90,2.55,2.65
+13:00,Gor Mahia FC vs Mathare United FC,1.28,4.70,8.50
+13:00,Chemelil Sugar vs Mount Kenya United,1.70,3.40,4.20
+13:00,Shabana FC vs Coast Stima,3.50,3.20,1.90
+14:15,Hayal-Arab vs Hilal El Fasher,1.80,3.00,4.30
+17:15,Al Ahly Merowe vs Hay Alwady FC,2.60,3.00,2.50
+13:30,Aswan FC vs Ghazl El Mahallah,3.40,2.60,2.30
+16:00,El Gouna FC vs Al Ittihad Al Sakandary,2.65,2.80,2.65
+13:30,Pharco FC vs Ala'ab Damanhur,1.60,3.10,5.70
+13:30,Sporting Club vs Abo Qair Semads,3.00,3.00,2.20
+13:30,Biyala SC vs Maley. Kafr El Zayiat,4.00,2.90,1.90
+13:30,El Hammam vs Al Olympi,3.50,2.80,2.10
+17:00,Young African FC vs Team Rhino,2.20,2.60,3.50
+17:00,Gunjur United vs Immigration,3.50,2.60,2.20
+17:00,2nd Infantry vs PSV Wellingara,3.40,2.60,2.25
+17:00,Jam City Utd vs SK East BI,2.00,2.60,4.30

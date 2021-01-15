@@ -76,7 +76,7 @@ export class BetslipComponent implements OnInit {
 
     for(let stat of this.scores){
 
-      if(stat.time.substring(0, 2) >= 85 && stat.finish == true){
+      if(stat.time.substring(0, 2) >= 90 && stat.finish == true){
         
         this.mystatus.push(stat.match_name)
       }      

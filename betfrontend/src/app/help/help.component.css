@@ -1,0 +1,104 @@
+
+
+.container{
+
+	background-color: rgba(255, 255, 255, 0.7);
+	width: 750px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*.container .accord{
+	background-color: rgb(214, 201, 201);
+	padding: 15px auto;
+}*/
+
+#accordion{
+	width: 510px;
+	padding: 0 0;
+	margin-right: auto;
+	margin-left: auto;
+	box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+	margin-top: 20px;
+
+}
+
+
+.Find{
+	text-align: center;
+	margin-top: 0;
+}
+
+.Help{
+	text-align: center;
+}
+
+#accordion .card .card-header .card-link{
+	text-align: center;
+}
+
+.panel-heading{
+	text-align: center;
+	border-bottom: groove;
+	margin-bottom: 15px;
+}
+
+.panel-default{
+	border: groove;
+}
+
+#collapseOne .card-body .panel-body ul img {
+	display: block;
+	margin-left: 50px;
+	margin: 15px 0 ;
+}
+
+#collapseTwo .card-body .panel-body ul img {
+	display: block;
+	margin-left: 30px;
+	margin-bottom: 30px;
+	margin-top:15px;
+}
+
+.card .card-header:hover {
+	background-color: rgba(128,128,128, 0.4)
+}
+
+a {
+	text-decoration: none;
+	color: rgb(0, 0, 102);
+}
+
+a:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+
+.centre{
+	border: groove;
+	border-radius: 25px;
+	width: 400px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px; 
+	box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+
+}
+
+.centre form p {
+	text-align: center;
+}
+
+.centre form label {
+	text-align: center;
+}
+
+form textarea{
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+

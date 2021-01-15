@@ -72,7 +72,7 @@ depositValidate(x,y) {
       showConfirmButton: false,
       timer: 2000
     })
-      
+    window.location.reload();
     },
     error => {
       Swal.fire({
@@ -101,7 +101,7 @@ depositValidate(x,y) {
             showConfirmButton: false,
             timer: 2000
           })
-          
+          window.location.reload();
         },
         error => {
           Swal.fire({

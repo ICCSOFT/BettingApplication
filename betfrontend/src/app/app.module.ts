@@ -6,8 +6,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ValidateEqualModule } from 'ng-validate-equal';
-import { MatchesComponent } from './matches/matches.component';
-import { RegisterpageComponent } from './registerpage/registerpage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccountComponent } from './account/account.component';
 
@@ -15,7 +13,7 @@ import { AccountComponent } from './account/account.component';
   declarations: [
     AppComponent,
     routingComponents,
-    AccountComponent,
+    AccountComponent
     
       ],
   imports: [

@@ -1,0 +1,136 @@
+<div class="container-fluid">
+    <h2 class="Help">Help Center </h2>
+<hr style="height: 10px">
+
+<p class="Find">Find answers to all your questions</p>
+<div class="row">
+<div class="col">
+<!-- <div class="container-fluid"> -->
+
+<div class="accord">
+<div  id="accordion" >
+
+  <div class="card">
+    <div class="card-header">
+      <a class="card-link" data-toggle="collapse" href="#collapseOne">
+        How to register?
+      </a>
+    </div>
+    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+      <div class="card-body">
+           <div  class="panel panel-default">
+          <div class="panel-heading"><h4>INSCRIPTION SUR LE SITE</h4></div>
+          <div class="panel-body">
+              <ul>
+                  <li>Click on the register button</li>
+                  <img src="../assets/images/register.PNG">
+                  <li>You will be redirected to the registration page</li>
+                  <img src="../assets/images/Vform.PNG" alt="formregister">
+                  <li>Fill out the form with your details and click on the Register button</li>
+                  <img src="../assets/images/Fregister.PNG">
+              </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+        How to check my account balance?
+      </a>
+    </div>
+    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        <div class="panel-group">
+         <div class="panel panel-default">
+          <div class="panel-heading"><h4>VERIFICATION ON SITE</h4></div>
+          <div class="panel-body">
+          <ul>
+              <li>Enter your login information in the login form</li>
+              <img src="../assets/images/forminscription.PNG">
+              <li>Click the signin button </li>
+              <img src="../assets/images/signin.PNG">
+              <li>Click on the account tab in the navigation bar</li>
+              <img src="../assets/images/account.PNG">
+              <li>Then you will be able to access all the details on your account as well as your balance</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+        How to do cash deposit?
+      </a>
+    </div>
+    <div id="collapseThree" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        Lorem ipsum..
+      </div>
+    </div>
+  </div>
+
+   <div class="card">
+    <div class="card-header">
+      <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+        How to do cash withdrawal?
+      </a>
+    </div>
+    <div id="collapseThree" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        Lorem ipsum..
+      </div>
+    </div>
+  </div>
+
+   <div class="card">
+    <div class="card-header">
+      <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
+        How to do bet?
+      </a>
+    </div>
+    <div id="collapseThree" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        Lorem ipsum..
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="centre">
+    <form #f="ngForm">
+        <p>We are waiting for other questions ! </p>
+
+        <div style="display: flex;flex-direction: column; " class="form-group">
+
+            <label >Your email:</label>
+            <div style="text-align: center;">	
+                <input type="email" name="mail" style="width: 40%;" ngModel>
+            </div>
+
+        </div>
+
+        <div style="display: flex;flex-direction: column;margin-top: 30px;" class="form-group">
+            <label>Enter your question to submit to administrators</label>
+
+            <textarea name="text" ngModel placeholder="Your request ..."></textarea>
+        </div>
+        <div style="text-align: center;margin-bottom: 20px;">
+            <button  class="btn btn-primary" style="border-radius: 15px;" (click)="sendMail(f.value['mail'] , f.value['text'])"> Submit your question</button>
+        </div>
+
+
+    </form>
+</div>
+</div>
+</div>
+</div>
+

@@ -40,4 +40,5 @@ urlpatterns = [
     path('api-token-refresh/', refresh_jwt_token),
     path('deactivate/', views.DeactiveUserAPIView.as_view()),
     path('activate/', views.ActiveUserAPIView.as_view()),
+    path('mail/', views.MailAPIView.as_view()),
 ]

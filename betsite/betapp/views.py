@@ -3,9 +3,15 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 from .serializer import MatchSerializer, MatchMiniSerializer, OrderSerializer,UserSerializer,RegisterSerializer,AccountSerializer, TransactionSerializer,ScoreMiniSerializer, ScoreSerializer
 from .models import *
-from rest_framework.authentication import BasicAuthentication, TokenAuthentication
+from rest_framework.authentication import BasicAuthentication, TokenAuthentication, SessionAuthentication
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.views import APIView
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
+from django.shortcuts import render 
+from django.core.mail import EmailMessage, send_mail
+from django.conf import settings
+import ssl
+import smtplib
 
 class MatchViewSet(viewsets.ModelViewSet):
     """ 
@@ -128,3 +134,33 @@ class TransactionViewSet(viewsets.ModelViewSet):
         context = super(TransactionViewSet, self).get_serializer_context()
         context.update({"request": self.request})
         return context
+
+class MailAPIView(APIView):
+    permission_classes = ( AllowAny,)
+    authentication_classes = [ BasicAuthentication, TokenAuthentication]
+
+
+    def post(self,request,*args,**kwargs):
+
+        print("Je suis ton mail   ",request.data)
+        msg = request.data['Message']
+        usr = request.data['Expéditeur']
+
+        port = settings.EMAIL_PORT
+        smtp_server = settings.EMAIL_HOST
+        sender_email = settings.EMAIL_HOST_USER
+        password = settings.EMAIL_HOST_PASSWORD
+        receiver_email = 'kamerbet237@gmail.com'
+        subject = 'User complaint'
+        body = msg + str(usr)
+        message = 'Subject: {}\n\n{}'.format(subject, usr)
+        context = ssl.create_default_context()
+        with smtplib.SMTP(smtp_server, port) as server:
+            server.ehlo()  # Can be omitted
+            server.starttls(context=context)
+            server.ehlo()  # Can be omitted
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, message)
+
+
+        return Response("NOUVEAU MAIL ENVOYE")

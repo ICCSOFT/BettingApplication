@@ -127,6 +127,10 @@ export class BetappService {
     return this.http.post(this.baseurl + '/order/', body, {headers: this.httpHeaders});
   }
 
+  mailsending(message): Observable<any>{
+    return this.http.post(this.baseurl + '/mail/',message, {headers: this.httpHeaders})
+  }
+
   logout(){
     sessionStorage.removeItem('token')
     sessionStorage.removeItem('username')
